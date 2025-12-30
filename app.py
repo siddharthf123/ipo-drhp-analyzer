@@ -6,19 +6,20 @@ from dotenv import load_dotenv
 from pypdf import PdfReader
 import google.generativeai as genai
 
-# -----------------------
-# 1. Load API key
-# -----------------------
-load_dotenv()
-API_KEY = os.getenv("GEMINI_API_KEY")
-
-if not API_KEY:
-    st.error("GEMINI_API_KEY not found in .env file")
-    st.stop()
-
-genai.configure(api_key=API_KEY)
+genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
 model = genai.GenerativeModel("gemini-2.5-flash")
 
+def check_password():
+    password = st.text_input("🔐 Enter access password:", type="password")
+    if password == st.secrets["APP_PASSWORD"]:
+        st.success("✅ Access granted!")
+        st.rerun()
+    elif password:
+        st.error("❌ Wrong password")
+        st.stop()
+    st.stop()
+
+check_password()
 
 # -----------------------
 # 2. Helper functions
