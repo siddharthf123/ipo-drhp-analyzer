@@ -172,8 +172,8 @@ FLAGS:
 {json.dumps(flags, indent=2)}
 
 TASK:
-Write a concise 4-6 sentence assessment of this IPO from a financial-statement-forensic perspective.
-Comment specifically on receivables vs revenue growth, related-party revenue dependence, and use of proceeds.
+Write a concise 10-15 sentence assessment of this IPO from a financial-statement-forensic perspective, with suggestions on whether it's a good investment or not.
+Comment specifically on, any possibility of accounting manipulation or misrepresentation, financial health of company, receivables vs revenue growth, related-party revenue dependence, and use of proceeds.
 If some data is missing, mention that briefly rather than guessing.
 Return only the paragraph.
 """
@@ -228,4 +228,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
