@@ -40,7 +40,7 @@ Fields:
   ],
 
   "key_risk_factors": [
-    short bullet points (max 5) summarising the most material risk factors mentioned
+    short bullet points (max 7) summarising the most material risk factors mentioned
   ]
 }
 
@@ -228,5 +228,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
